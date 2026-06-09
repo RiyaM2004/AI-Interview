@@ -8,7 +8,7 @@ import { setUserData } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
 import InterviewPage from "./pages/InterviewPage";
 
-export const ServerUrl = "http://localhost:8000"
+export const ServerUrl = import.meta.env.VITE_API_URL;
 function App(){
   const dispatch = useDispatch()
   useEffect(()=>{

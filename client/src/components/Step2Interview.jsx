@@ -7,7 +7,7 @@ import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 import axios from "axios";
 import { BsArrowRight } from "react-icons/bs";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = import.meta.env.VITE_API_URL;
 
 
 function Step2Interview({ interviewData, onFinish }) {

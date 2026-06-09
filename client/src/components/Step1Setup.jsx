@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import {useDispatch, useSelector} from 'react-redux';
 import { setUserData } from "../redux/userSlice";
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = import.meta.env.VITE_API_URL;
 
 function Step1Setup({onstart}){
     const {userData} = useSelector((state)=>state.user);
