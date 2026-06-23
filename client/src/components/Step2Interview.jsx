@@ -250,11 +250,13 @@ function Step2Interview({ interviewData, onFinish }) {
   }
 
   const finishInterview = async () => {
-    stopMic()
-    setIsMicOn(false)
+    stopMic();
+    setIsMicOn(false);
     try {
-      const result = await axios.post(ServerUrl + "/api/interview/finish", { interviewId }, { withCredentials: true })
-      console.log(result.data)
+      const result = await axios.post(ServerUrl + "/api/interview/finish", { interviewId }, { withCredentials: true });
+      setTimeout(() => {
+        onFinish(result.data);
+      }, 0);
     } catch (error) {
       console.log(error)
     }
